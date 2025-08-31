@@ -1,27 +1,2 @@
-const { createClient } = require('@supabase/supabase-js');
-
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseServiceKey) {
-  throw new Error('Missing Supabase environment variables');
-}
-
-// Service role client for admin operations
-const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
-  auth: {
-    autoRefreshToken: false,
-    persistSession: false
-  }
-});
-
-// Anonymous client for public operations
-const supabasePublic = createClient(supabaseUrl, supabaseAnonKey);
-
-module.exports = {
-  supabaseAdmin,
-  supabasePublic,
-  supabaseUrl,
-  supabaseAnonKey
-};
+SUPABASE_URL=sorojftjbkyngvanjsjl.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNvcm9qZnRqYmt5bmd2YW5qc2psIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NjY1MTE5NCwiZXhwIjoyMDcyMjI3MTk0fQ.ZGUxiB1ca3xf89pv1zmbsDYu9wwsJJCvH2iNQHeGaqY
