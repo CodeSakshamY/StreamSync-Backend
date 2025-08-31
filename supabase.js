@@ -1,2 +1,8 @@
-SUPABASE_URL=sorojftjbkyngvanjsjl.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNvcm9qZnRqYmt5bmd2YW5qc2psIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NjY1MTE5NCwiZXhwIjoyMDcyMjI3MTk0fQ.ZGUxiB1ca3xf89pv1zmbsDYu9wwsJJCvH2iNQHeGaqY
+import { createClient } from '@supabase/supabase-js';
+import dotenv from 'dotenv';
+dotenv.config();
+
+export const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
