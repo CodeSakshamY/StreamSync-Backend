@@ -1,3 +1,8 @@
-// run `node index.js` in the terminal
+import { createClient } from '@supabase/supabase-js';
+import dotenv from 'dotenv';
+dotenv.config();
 
-console.log(`Hello Node.js v${process.versions.node}!`);
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY);
+
+export default supabase;
+
